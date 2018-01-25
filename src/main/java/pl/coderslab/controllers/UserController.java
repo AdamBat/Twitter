@@ -92,8 +92,6 @@ public class UserController {
 			model.addAttribute("user", user);
 			model.addAttribute("tweet", new Tweet());
 			model.addAttribute("tweets", tweetRepo.findByUserId(user.getId()));
-			model.addAttribute("localDateTimeFormat", new SimpleDateFormat("yyyy-MM-dd HH-mm"));
-
 			return "user/user-home";
 		} else {
 			return "redirect:/user/login";
@@ -153,8 +151,4 @@ public class UserController {
 		}
 	}
 }
-/*
- * for (Iterator<String> iterator = list.iterator(); iterator.hasNext();) {
- * String string = iterator.next(); if (string.isEmpty()) { // Remove the
- * current element from the iterator and the list. iterator.remove(); } }
- */
+

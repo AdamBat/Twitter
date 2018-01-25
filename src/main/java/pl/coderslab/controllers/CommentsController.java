@@ -29,14 +29,12 @@ public class CommentsController {
 			@Valid @ModelAttribute Comment comment, BindingResult result, Model model) {
 		if(user!=null) {
 			Comment comm = new Comment(user,tweetRepo.getOne(id),comment.getText());
-	/*	comment.setTweet(tweetRepo.getOne(id));
-		comment.setUser(user);*/
+
 		commentRepo.save(comm);
 		model.addAttribute("comment", "Comment has been added");
 		return "redirect:/user/home";
 		}
 		else {
-			System.out.println("user to null");
 			model.addAttribute("comment", "Comment has NOT been added");
 
 			return "redirect:/user/home";
