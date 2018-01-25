@@ -77,7 +77,7 @@ public class TweetController {
 		Comment comment = new Comment();
 		System.out.println(comment.toString());
 		Tweet tweet = tweetRepo.getOne(id);
-		List<Comment> comments = (List)commentRepo.findAllByTweet(tweet);
+		List<Comment> comments = (List<Comment>)commentRepo.findAllByTweet(tweet);
 		model.addAttribute("comment",comment);
 		model.addAttribute("comments",comments);
 		model.addAttribute("tweet", tweet);

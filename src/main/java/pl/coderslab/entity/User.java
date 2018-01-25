@@ -48,6 +48,13 @@ public class User {
 	@OneToMany
 	@JoinColumn(name="user_id")
 	private List<Comment> comments;
+	@OneToMany
+	@JoinColumn(name="user_id")
+	private List<Message> sent;
+	
+	@OneToMany
+	@JoinColumn(name="user_id")
+	private List<Message> received;
 
 	public Long getId() {
 		return id;
@@ -80,6 +87,38 @@ public class User {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public List<Tweet> getTweets() {
+		return tweets;
+	}
+
+	public void setTweets(List<Tweet> tweets) {
+		this.tweets = tweets;
+	}
+
+	public List<Comment> getComments() {
+		return comments;
+	}
+
+	public void setComments(List<Comment> comments) {
+		this.comments = comments;
+	}
+
+	public List<Message> getSent() {
+		return sent;
+	}
+
+	public void setSent(List<Message> sent) {
+		this.sent = sent;
+	}
+
+	public List<Message> getReceived() {
+		return received;
+	}
+
+	public void setReceived(List<Message> received) {
+		this.received = received;
 	}
 
 

@@ -18,7 +18,7 @@
 		<tr>
 
 			<th>Created</th>
-			<th>Ttitle</th>
+			<th>Title</th>
 			<th>Text</th>
 			<th>Details</th>
 		</tr>
@@ -46,5 +46,10 @@
 	<form:form action="${pageContext.request.contextPath }/user/delete">
 		<input type="submit" value="DELETE ACCOUNT">
 	</form:form>
+	<form:form action="${pageContext.request.contextPath }/user/inbox">
+		<input type="submit" value="Private Messages">
+	</form:form>
+	<a href="${pageContext.request.contextPath }/user/inbox/new">Add new message</a>
+		
 </body>
 </html>

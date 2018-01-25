@@ -67,5 +67,16 @@ public class AppConfig implements WebMvcConfigurer {
 	public PasswordEncoder passwordEncoder() {
 	    return new BCryptPasswordEncoder();
 	}
+	@Override
+
+	public void addFormatters(FormatterRegistry registry) {
+		registry.addConverter(userConverter());
+
+	}
+	@Bean
+	public UserConverter userConverter() {
+		return new UserConverter();
+
+	}
 	
 }
